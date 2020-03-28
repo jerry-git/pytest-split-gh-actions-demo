@@ -12,8 +12,8 @@ When `pytest-split` is combined with parallel execution features of GitHub Actio
 * [tests](./tests/test_my_project.py) contain 10 tests: one for each dummy function.
 * If we execute the tests sequentially, the total execution time is around 5 minutes (10 * 30 seconds).
 * By using parallel execution via [matrix strategy](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstrategymatrix) and `pytest-split` splitting feature, we can get significant boost to total execution time of CI.
-* This example is using parallelization level 5 which basically means that we run 2/10 tests (2 * 30seconds) per job and jobs are ran in parallel. Meaning that all tests finish in around 1 minute.
-* Additionally, the example collects coverage from each "sub suite" run, combines the coverage information after all "sub suites" are ran, and finally, fails the build if coverage is below 100%.
+* This example is using parallelization level 5 which basically means that we run 2/10 tests (2 * 30seconds) per job and jobs are run in parallel. Meaning that all tests finish in around 1 minute.
+* Additionally, the example collects coverage from each "sub suite" run, combines the coverage information after all "sub suites" are run, and finally, fails the build if coverage is below 100%.
 * [The workflow configuration is here.](./.github/workflows/test.yml)
 
 
