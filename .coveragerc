@@ -1,0 +1,3 @@
+[run]
+source = my_project
+relative_files = True
