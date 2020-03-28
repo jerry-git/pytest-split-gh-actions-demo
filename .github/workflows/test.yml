@@ -61,11 +61,11 @@ jobs:
       - name: Download coverage1
         uses: actions/download-artifact@v1
         with:
-          name: coverage1/.coverage
+          name: coverage1
       - name: Download coverage2
         uses: actions/download-artifact@v1
         with:
-          name: coverage2/.coverage
+          name: coverage2
       - name: Run coverage
         run: |
           coverage combine coverage*/.coverage*
