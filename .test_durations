@@ -1,0 +1,22 @@
+[
+  [
+    "tests/test_my_project.py::test_1",
+    10.003882884979248
+  ],
+  [
+    "tests/test_my_project.py::test_2",
+    10.005489826202393
+  ],
+  [
+    "tests/test_my_project.py::test_3",
+    10.00536561012268
+  ],
+  [
+    "tests/test_my_project.py::test_4",
+    10.005580186843872
+  ],
+  [
+    "tests/test_my_project.py::test_5",
+    10.00451111793518
+  ]
+]
