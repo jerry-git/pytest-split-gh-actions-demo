@@ -3,7 +3,7 @@ name: Run tests
 on: [push]
 
 jobs:
-  test:
+  test-1:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -17,4 +17,20 @@ jobs:
           pip install -r requirements.txt
       - name: Run pytest
         run: |
-          pytest
+          pytest --splits 2 --group 1
+
+  test-2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run pytest
+        run: |
+          pytest --splits 2 --group 2
