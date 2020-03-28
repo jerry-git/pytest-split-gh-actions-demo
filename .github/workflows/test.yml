@@ -3,8 +3,11 @@ name: Run tests
 on: [push]
 
 jobs:
-  test-1:
+  test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        group: [1, 2]
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python 3.8
@@ -16,37 +19,37 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Run pytest
-        run: |
-          coverage run -m pytest --splits 2 --group 1
+        run: coverage run -m pytest --splits 2 --group ${{ matrix.group }}
       - name: Upload coverage
         uses: actions/upload-artifact@v1
         with:
-          name: coverage1
+          name: coverage${{ matrix.group }}
           path: .coverage
 
-  test-2:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v1
-        with:
-          python-version: 3.8
-      - name: Install deps
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-      - name: Run pytest
-        run: |
-          coverage run -m pytest --splits 2 --group 2
-      - name: Upload coverage
-        uses: actions/upload-artifact@v1
-        with:
-          name: coverage2
-          path: .coverage
+#  test-2:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v2
+#      - name: Set up Python 3.8
+#        uses: actions/setup-python@v1
+#        with:
+#          python-version: 3.8
+#      - name: Install deps
+#        run: |
+#          python -m pip install --upgrade pip
+#          pip install -r requirements.txt
+#      - name: Run pytest
+#        run: |
+#          coverage run -m pytest --splits 2 --group 2
+#      - name: Upload coverage
+#        uses: actions/upload-artifact@v1
+#        with:
+#          name: coverage2
+#          path: .coverage
 
   coverage:
-    needs: [test-1, test-2]
+#    needs: [test-1, test-2]
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
