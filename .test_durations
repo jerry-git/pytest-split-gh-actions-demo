@@ -5,38 +5,38 @@
   ],
   [
     "tests/test_my_project.py::test_2",
-    30.00502896308899
+    30.00702896308899
   ],
   [
     "tests/test_my_project.py::test_3",
-    30.004975080490112
+    30.008975080490112
   ],
   [
     "tests/test_my_project.py::test_4",
-    30.00373864173889
+    30.00973864173889
   ],
   [
     "tests/test_my_project.py::test_5",
-    30.004629850387573
+    30.010629850387573
   ],
   [
     "tests/test_my_project.py::test_6",
-    30.00581192970276
+    30.01181192970276
   ],
   [
     "tests/test_my_project.py::test_7",
-    30.001826524734497
+    30.012826524734497
   ],
   [
     "tests/test_my_project.py::test_8",
-    30.005656480789185
+    30.013656480789185
   ],
   [
     "tests/test_my_project.py::test_9",
-    30.005048751831055
+    30.014048751831055
   ],
   [
     "tests/test_my_project.py::test_10",
-    30.00661563873291
+    30.01561563873291
   ]
 ]
