@@ -61,12 +61,12 @@ jobs:
       - name: Download coverage1
         uses: actions/download-artifact@v1
         with:
-          name: coverage/.coverage1
+          name: coverage1/.coverage
       - name: Download coverage2
         uses: actions/download-artifact@v1
         with:
-          name: coverage/.coverage2
+          name: coverage2/.coverage
       - name: Run coverage
         run: |
-          coverage combine coverage/.coverage*
+          coverage combine coverage*/.coverage*
           coverage report --fail-under=100
