@@ -1,6 +1,6 @@
 name: Run tests
 
-on: [push]
+on: push
 
 jobs:
   test:
@@ -39,27 +39,9 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      # v2 will support downloading multiple with single step: https://github.com/actions/download-artifact/issues/23#issue-580701561
-      - name: Download coverage1
-        uses: actions/download-artifact@v1
-        with:
-          name: coverage1
-      - name: Download coverage2
-        uses: actions/download-artifact@v1
-        with:
-          name: coverage2
-      - name: Download coverage3
-        uses: actions/download-artifact@v1
-        with:
-          name: coverage3
-      - name: Download coverage4
-        uses: actions/download-artifact@v1
-        with:
-          name: coverage4
-      - name: Download coverage5
-        uses: actions/download-artifact@v1
-        with:
-          name: coverage5
+      - name: Download all artifacts
+        # Downloads coverage1, coverage2, etc.
+        uses: actions/download-artifact@v2
       - name: Run coverage
         run: |
           coverage combine coverage*/.coverage*
