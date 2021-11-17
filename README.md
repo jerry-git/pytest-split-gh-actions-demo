@@ -17,5 +17,5 @@ When `pytest-split` is combined with parallel execution features of GitHub Actio
 * [The workflow configuration is here.](./.github/workflows/test.yml)
 
 
-While writing this, the [usage limits](https://help.github.com/en/actions/getting-started-with-github-actions/about-github-actions#usage-limits) of GitHub actions are quite generous:
+While writing this, the [usage limits](https://docs.github.com/en/actions/learn-github-actions/usage-limits-billing-and-administration#usage-limits) of GitHub actions are quite generous:
 e.g. free GitHub plan lets you run 20 concurrent jobs simultaneously.
